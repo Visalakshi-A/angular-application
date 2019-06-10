@@ -1,0 +1,8 @@
+<div class="box">
+  <div>
+    <h3 style="align-content: center">A</h3>
+    <p>Count: {{count}}</p>
+    <button (click)="inc()">C</button>
+  </div>
+</div>
+<app-c-box bind-count="cCount" (incremented)="assignCount($event)"></app-c-box>

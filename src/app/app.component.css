@@ -1,0 +1,48 @@
+div {
+  text-align: center;
+}
+
+.box {
+  height: 20em;
+  width: 25%;
+  display: inline-block;
+  margin: auto;
+  padding: 2em;
+  font-size: 1.2em;
+}
+
+.box h1 {
+  font-size: 1.5em;
+}
+
+.box div {
+  height: inherit;
+  padding: 1em;
+  background-color: #99ccff;
+  border: 0.3em solid #1a8cff;
+  border-radius: 1em;
+}
+
+.box p {
+  padding: 1em;
+  margin-top: 3em;
+  font-size: 1.2em;
+}
+
+.box button {
+  background-color: #0073e6;
+  font-size: 1.2em;
+  font-weight: bold;
+  border: 0.2em solid #0073e6;
+  color: white;
+  padding: 1em 3em 1em 3em;
+  margin-top: 3em;
+}
+
+.box button:hover {
+  background-color: #cce6ff;
+  border: 0.2em solid #0073e6;
+  color: #0073e6;
+  padding: 1em 3em 1em 3em;
+  margin-top: 3em;
+}
