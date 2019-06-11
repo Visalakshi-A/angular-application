@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-b-box',
@@ -7,16 +7,17 @@ import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 })
 export class BBoxComponent implements OnInit {
 
-  @Input()
-  count: number = 0;
+  private count: number = 0;
   @Output()
-  incremented = new EventEmitter<number>();
-
-  aCount: number = 0;
+  increment = new EventEmitter<boolean>();
 
   inc() {
-    this.aCount++;
-    this.incremented.emit(this.aCount);
+    this.count++;
+  }
+
+  incACount() {
+    // this.aCount++;
+    this.increment.emit(true);
   }
 
   constructor() { }

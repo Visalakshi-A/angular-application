@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-a-box',
@@ -7,17 +7,10 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ABoxComponent implements OnInit {
 
-  @Input()
-  count: number = 0;
-
-  cCount: number = 0;
-
-  assignCount(aCount: number) {
-    this.count = aCount;
-  }
+  private count: number = 0;
   
-  inc() {
-    this.cCount++;
+  inc(flag: boolean) {
+    this.count++;
   }
 
   constructor() { }
