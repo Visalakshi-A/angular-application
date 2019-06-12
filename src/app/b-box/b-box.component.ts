@@ -1,4 +1,5 @@
-import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CountService } from '../count.service';
 
 @Component({
   selector: 'app-b-box',
@@ -7,21 +8,20 @@ import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 })
 export class BBoxComponent implements OnInit {
 
-  @Input()
-  count: number = 0;
-  @Output()
-  incremented = new EventEmitter<number>();
+  count: number;
 
-  aCount: number = 0;
-
-  inc() {
-    this.aCount++;
-    this.incremented.emit(this.aCount);
+  getCount() {
+    this.countService.bCountSubject.subscribe(count => this.count = count);
   }
 
-  constructor() { }
+  inc() {
+    this.countService.incA();
+  }
+
+  constructor(private countService: CountService) { }
 
   ngOnInit() {
+    this.getCount();
   }
 
 }
