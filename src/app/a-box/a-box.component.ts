@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { CountService } from '../count.service';
 
 @Component({
   selector: 'app-a-box',
@@ -17,10 +18,15 @@ export class ABoxComponent implements OnInit {
   }
   
   inc() {
-    this.cCount++;
+    this.incCount(this.countService.incCallback);
   }
 
-  constructor() { }
+  incCount(getIncrementedCount: Function) {
+    let incrementedCount = getIncrementedCount(this.cCount);
+    this.cCount = incrementedCount;
+  }
+
+  constructor(private countService: CountService) { }
 
   ngOnInit() {
   }

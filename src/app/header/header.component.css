@@ -1,0 +1,13 @@
+div {
+  background-color: #1a8cff;
+  color: white;
+  height: 4em;
+}
+
+h1 {
+  margin: inherit;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  height: inherit;
+  padding: 0.5em;
+}

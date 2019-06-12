@@ -1,4 +1,5 @@
 import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
+import { CountService } from '../count.service';
 
 @Component({
   selector: 'app-c-box',
@@ -18,11 +19,12 @@ export class CBoxComponent implements OnInit {
     this.incremented.emit(aCount);
   }
 
-  inc() {
-    this.bCount++;
+  async inc() {
+    const promise = this.countService.incPromise(this.bCount);
+    this.bCount = Number(await promise);
   }
 
-  constructor() { }
+  constructor(private countService: CountService) { }
 
   ngOnInit() {
   }
